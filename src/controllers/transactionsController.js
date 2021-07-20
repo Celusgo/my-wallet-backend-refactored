@@ -9,6 +9,7 @@ async function newTransaction(req, res){
         if (!token) return res.sendStatus(401);
 
         const id = await confirmHistory(token, 'create');
+        
         if (id===null) return res.sendStatus(401);
 
         const { value, type } = req.body;
@@ -48,6 +49,7 @@ async function transactionsList(req, res){
 async function transactionsSum(req, res){
     try {
         const authorization = req.headers.authorization || "";
+        
         const token = authorization.split('Bearer ')[1];
 
         if (!token) return res.sendStatus(401);
