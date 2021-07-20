@@ -12,7 +12,7 @@ async function confirmHistory(token, type) {
 
     const events = transactionsHistory(user.id);
 
-    return (type === 'list') ? events : (type === 'create') ? user.id : "";
+    return (type === 'history') ? events : (type === 'new') ? user.id : "";
 };
 
 async function confirmTransaction(value, type, id){
