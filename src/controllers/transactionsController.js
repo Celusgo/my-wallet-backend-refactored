@@ -8,7 +8,7 @@ async function newTransaction(req, res){
 
         if (!token) return res.sendStatus(401);
 
-        const id = await confirmHistory(token, 'create');
+        const id = await confirmHistory(token, 'new');
         
         if (id===null) return res.sendStatus(401);
 
@@ -35,7 +35,7 @@ async function transactionsList(req, res){
 
         if (!token) return res.sendStatus(401);
     
-        const events = await confirmHistory(token, 'list');
+        const events = await confirmHistory(token, 'history');
 
         if(events === null) return res.sendStatus(401);
     
