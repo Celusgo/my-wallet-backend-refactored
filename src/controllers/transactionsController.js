@@ -54,7 +54,7 @@ async function transactionsSum(req, res){
 
         if (!token) return res.sendStatus(401);
     
-        const events = await confirmHistory(token, 'list');
+        const events = await confirmHistory(token, 'history');
 
         if(events === null) return res.sendStatus(401);
     
